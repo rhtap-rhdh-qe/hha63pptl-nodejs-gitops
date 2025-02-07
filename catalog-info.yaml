@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: hha63pptl-nodejs-gitops
+  description: This is GitOps manifest for hha63pptl-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=hha63pptl-nodejs
+    backstage.io/kubernetes-id: hha63pptl-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: hha63pptl-nodejs   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:hha63pptl-nodejs
